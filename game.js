@@ -77,9 +77,9 @@ module.exports = {
             this.gameState.rejectAction = false;
             var msg = null;
             if (player > 0) {
-                msg = "You win";
+                msg = "You win!"; 
             } else if (player < 0) {
-                msg = "Computer wins";
+                msg = "I win!"; //Changed dialog to I win to have the bot speak in first person in line with the rest of the dialog
             } else {
                 msg = "It's a draw";
             }

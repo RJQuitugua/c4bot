@@ -86,7 +86,7 @@ bot.dialog('/new', [
             if (wonPlayer > 0) {
                 msg = "You won!";
             } else if (wonPlayer < 0) {
-                msg = "Computer won!";
+                msg = "I won!"; //Changed from "Computer Won!" to "I won" since the rest of the bot speaks in the first person. 
             }
             msg += "\n";
         }
@@ -159,7 +159,7 @@ bot.dialog('/move', [
 
 function canvasToMessage(session, canvas, player) {
     return new builder.Message(session)
-        .text((player != 0) ? ((player > 0) ? "You moved 🔴" : "Computer moved 🔵") : "Waiting for your move")
+        .text((player != 0) ? ((player > 0) ? "You moved 🔴" : "Computer moved 🔵") : "Waiting for your move...") //Added ellipses to Waiting For Your move to further indicate the bot is waiting for input
         .attachments([{
             contentType: "image/png",
             contentUrl: canvas.toDataURL()
